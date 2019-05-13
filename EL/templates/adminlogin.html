@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-LIBRARY | {{ title }}</title>
+
+    <link href="{{ url_for('static', filename ='boostrap/bootstrap.min.css') }}" rel="stylesheet" media="all"/>
+{#    <link href="{{ url_for('static', filename ='boostrap/style.css') }}" rel="stylesheet" type="text/css" media="all" />#}
+    <link href="{{ url_for('static', filename ='css/util.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ url_for('static', filename ='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" media="all" />
+     <link href="{{ url_for('static', filename ='fonts/iconic/css/material-design-iconic-font.min.css') }}" rel="stylesheet" type="text/css" media="all" />
+
+    <link href="{{ url_for('static', filename ='css/main.css') }}" rel="stylesheet" type="text/css" media="all" />
+
+
+</head>
+<body>
+<!-- form adminlogin -->
+<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" action="/adminlogin" method="post">
+                    {{ form.hidden_tag() }}
+					<span class="login100-form-logo">
+						<i class="zmdi zmdi-landscape"></i>
+					</span>
+					<span class="login100-form-title p-b-34 p-t-27">
+						ADMIN
+					</span>
+					<div class="wrap-input100 validate-input" >
+                        {{ form.username(class="input100", placeholder="username") }}
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					</div>
+					<div class="wrap-input100 validate-input">
+						{{ form.password(class="input100", placeholder="password") }}
+						<span class="focus-input100" data-placeholder="&#xf191;"></span>
+					</div>
+                    <div class="alert">
+                    <!--  -->
+        </div>
+					<div class="contact100-form-checkbox">
+                        {{ form.remember.label(class="label-checkbox100", for="ckb1") }}
+                        {{ form.remember(class="input-checkbox100",id="ckb1",type="checkbox" ) }}
+{#						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">#}
+{#						<label class="label-checkbox100" for="ckb1">#}
+{#							Remember me#}
+{#						</label>#}
+					</div>
+					<div class="container-login100-form-btn">
+                        {{ form.submit(class="login100-form-btn") }}
+{#						<button class="login100-form-btn">#}
+{#							Login#}
+{#						</button>#}
+					</div><br><br>
+                    <div class="container-login100-form-btn">
+						
+							<a href="/index" class="btn btn-primary"><i class="fa fa-home" style="color: #222;"></i></a>
+						
+					</div>
+					<div class="text-center p-t-90">
+						<a class="txt1" href="#">
+{#							Forgot Password?#}
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>E-LIBRARY | {{ title }}</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="{{ url_for('static', filename ='boostrap/bootstrap.min.css') }}" rel="stylesheet" media="all"/>
+    <link href="{{ url_for('static', filename ='css/dash.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ url_for('static', filename ='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" media="all" />
+     <link href="{{ url_for('static', filename ='fonts/iconic/css/material-design-iconic-font.min.css') }}" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+<body>
+          <div class="top-bar">
+              <div class="row">
+                <div class="col-sm-4"> <h1 class=" glyphicon glyphicon-dashboard" style="font-size: 30px; padding-left: 17px;">Dashboard</h1></div>
+                <div class="col-sm-3"><h1 class="glyphicon glyphicon-user" style="font-size: 25px; padding-top: 8px;"></h1>   {{current_user.First_Name}} </div> 
+                  <div class="col-sm-3"> <a href="/logout" style="color: white;"><h6 class="glyphicon glyphicon-log-out" style="font-size: 20px; padding-top: 18px;"> Logout</h6></a></div>
+                </div> 
+              </div>
+            </div>
+
+            <div class="nxt-tb">
+            </div>  
+            <div class="row">
+              <div class="col-sm-2 right-sidebar">
+                      <section>
+                        <h3 style="text-align: center; font-family:Times New Roman, Times, serif; color: white;">Subjects</h3>
+                        
+                        <ul class="sub-list" id="myBtnContainer">
+                           <li><a class="btn active" onclick="filterSelection('all')" style="color: white!important;"> Show all</a></li>
+                           {% for sub in sub%}
+                           <li><a class="btn" onclick="filterSelection('{{sub.Subject|lower}}')" style="color: white!important;"> {{sub.Subject}}</a></li>
+                           {%endfor%}
+                        </ul>
+                        
+                      </section>
+                      </div>
+                    <div class="col-md-10">
+                        <h1 style="color: white; text-align: center;">Welcome {{current_user.First_Name}}  <img class="img-rounded" style="border-radius: 70px;" src="{{ image }}"></h1><hr>
+                        <div class="row">
+                          <div class="col-sm-5">
+                                <h1 style="color: white; text-align:center;">BOOKS</h1>
+                              <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Subject..">
+                                        <table id="myTable" class="table">
+                                          <thead>
+                                          <tr class="header" style="text-align: center;">
+                                            <th style="width:40%;">Topic</th>
+                                            <th style="width:20%;">Book</th>
+                                             <th style="width:40%;">Subject</th>
+                                          </tr>
+                                          </thead>
+                                            {% for book in book%}
+                                          <tbody>
+                                          <tr class="filter {{book.Subject|lower}}">
+                                            <td style="width:40%;" >{{book.Book_Topic}}</td>
+                                            <td style="width:20%;"><a href="/static/Book/{{book.Book}}" target="_blank">View Book</a></td>
+                                            <td style="width:20%;">{{book.Subject}}</td>
+                                          </tr>
+                                        </tbody>
+                                          {%endfor%}
+                                        </table>
+
+                          </div>
+                              <div class="col-sm-1"></div>
+                          <div class="col-sm-4">
+                                <h1 style="color: white; text-align: center; padding-left: 35px;">Videos</h1>
+                                        <table id="Table">
+                                          <tr class="header" style="text-align: right;">
+                                            <th style="width:40%;">Topic</th>
+                                            <th style="width:20%;">Video</th>
+                                            <th style="width:40%;">Subject</th>
+                                          </tr>
+                                          {% for video in video%}
+                                          <tr class="filter {{video.Subject|lower}}">
+                                            <td>{{video.Videos_Topic}}</td>
+                                            <td> 
+                                                  <a href="/static/videos/{{video.Videos}}" target="_blank">play</a>
+                                            </td>
+                                            <td>{{video.Subject}}</td>
+                                          </tr>
+                                          {%endfor%}
+                                        </table>
+
+                          </div>
+                        </div>
+                    </div>
+              </div>
+
+
+        </div>  
+
+<!--         <script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script> -->
+
+<script src="{{url_for('static', filename='js/dash.js')}}"></script>
+
+<!-- <script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script> -->
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+
+/*body tag*/
+body{
+	background: url("/static/images/banner.jpg") fixed  ;
+	background-size: contain;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+	min-height: 795px;
+	position: relative;
+	opacity: 0.3%;
+}
+/*//end of body tag styling*/
+
+/*heading*/
+
+.header-bottom {
+	position: relative;
+}
+
+.main-logo {
+	float: left;
+    line-height: 5px;
+    position: relative;
+    z-index: 999;
+}
+
+.main-logo h1 a span {
+	display: inline-block;
+	font-size: 1.5em;
+	color: #00b6e3;
+}
+
+.navbar {
+	margin-bottom: 0;
+}
+
+.navbar-nav {
+	float: right;
+	margin: 1.5em 4em 0 0;
+}
+
+.main-logo a {
+	color: #ffffff;
+	font-size: 1.3em;
+	text-decoration: none;
+	text-transform: capitalize;
+	letter-spacing: 3px;
+	font-weight: lighter;
+	font-family: 'Righteous', cursive;
+}
+
+header {
+	padding: 1em 0em;
+	width: 100%;
+}
+
+/*// end of header*/
+
+/*--nav effect--*/
+
+nav ul {
+	list-style: none;
+	text-align: center;
+}
+
+nav ul li a {
+
+	display: block;
+	padding-top: 15px;
+	text-decoration: none;
+	color: #aaa;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+	transition: all .5s;
+}
+
+nav ul li a:hover {
+	color: #555;
+}
+
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:hover,
+.navbar-inverse .navbar-nav>.active>a:focus {
+	color: #555;
+	background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	font-size: 13px;
+	letter-spacing: 1.5px;
+	color: #fff;
+	background: transparent;
+	padding: 8px 15px;
+	font-weight: 600;
+	border-bottom: 2px solid transparent;
+}
+
+.navbar-nav>li {
+	float: left;
+	margin: 0 10px;
+}
+
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:hover,
+.navbar-inverse .navbar-nav>.open>a:focus {
+	color: #00b6e3;
+	background-color: transparent;
+}
+
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+	border-color: transparent;
+	padding: 0;
+}
+
+.navbar-inverse {
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.navbar-nav>li>a.active,
+.navbar-inverse .navbar-nav>li>a:hover,
+.navbar-inverse .navbar-nav>li>a:focus {
+	color: #00b6e3;
+	border-bottom: 2px solid #fff;
+}
+
+.dropdown-menu {
+	top: 40px;
+}
+
+.dropdown-menu {
+	border-radius: 0;
+	background: #ffffff;
+	text-align: center;
+	padding: 0;
+	border: none;
+}
+
+.dropdown-menu li a {
+	text-transform: uppercase;
+	color: #212121;
+	font-size: 12px;
+	font-weight: 600;
+	padding: .8em 0;
+	border-bottom: 1px solid #ececef;
+}
+
+.dropdown-menu>li>a:hover {
+	color: #fff;
+	text-decoration: none;
+	background-color: #00b6e3;
+}
+
+/*//end of navbar effect*/
+
+/* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
+/*@media screen and (max-width: 580px) {*/
+  /*#navbar {*/
+    /*padding: 20px 10px !important; !* Use !important to make sure that JavaScript doesn't override the padding on small screens *!*/
+  /*}*/
+  /*#navbar a {*/
+    /*float: none;*/
+    /*display: block;*/
+    /*text-align: left;*/
+  /*}*/
+  /*#navbar-right {*/
+    /*float: none;*/
+  /*}*/
+/*}*/
+
+
+
+
+/*signup body*/
+
+/*index jumbotron*/
+.jum{
+	width: 70%;
+	margin: auto;
+	font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+	background: transparent !important;
+    text-align: center;
+    overflow: hidden;
+}
+
+.center{
+	text-align: center;
+}
+
+
+
+a {
+	font-family: Poppins-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: black;
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+  color: blue;
+}
+
+.button{
+	text-align: center;
+	padding: 20px 20px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}

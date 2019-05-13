@@ -1,0 +1,222 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    body {
+        background-image: url("/static/images/jamie-taylor-110195-unsplash.jpg");
+        filter: alpha(opacity=60);
+        overflow: scroll;
+    }
+
+    .login100-form {
+  width: 100%;
+}
+
+.login100-form-logo {
+  font-size: 60px;
+  color: #33333;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.login100-form-title {
+  font-family: Poppins-Medium;
+  font-size: 30px;
+  color: #fff;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+
+  display: block;
+}
+
+    .content-section{
+            margin: auto;
+            {#width: 100%;#}
+            {#min-height: 100vh;#}
+            {#display: -webkit-box;#}
+            {#display: -webkit-flex;#}
+            {#display: -moz-box;#}
+            {#display: -ms-flexbox;#}
+            {#display: flex;#}
+            {#flex-wrap: wrap;#}
+            {#justify-content: center;#}
+            {#align-items: center;#}
+            {#padding: 15px;#}
+            {#background-repeat: no-repeat;#}
+            {#  background-position: center;#}
+            {#  background-size: cover;#}
+            {#  position: relative;#}
+            {#  z-index: 1;#}
+    }
+
+    form{
+        width: 50%;
+        margin: auto;
+        color: white;
+    }
+
+    .signin {
+        text-align: left;
+        font-size: large;
+        color: white;
+    }
+
+    .signin a{
+        border-left: #2b542c 2px ;
+    }
+
+
+  </style>
+
+    {% include 'include/_nav.html' %}
+            {% endblock %}
+
+
+
+        {% block body %}
+            <div class="content-section">
+            <form class="jumbotron" method="post" action="" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Register Student</legend>
+                    <div class="form-group">
+                        {{ form.First_Name.label(class="form-control-label") }}
+                        {% if form.First_Name.errors %}
+                            {{ form.First_Name(class="form-control form-control-lg is invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.First_Name.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                        {{ form.First_Name(class="form-control form-control-lg") }}
+                            {% endif %}
+                    </div>
+
+               
+
+                <div class="form-group">
+                        {{ form.Last_Name.label(class="form-control-label") }}
+
+                        {% if form.Last_Name.errors %}
+                            {{ form.Last_Name(class="form-control form-control-lg is invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.Last_Name.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                        {{ form.Last_Name(class="form-control form-control-lg") }}
+                            {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.Status.label(class="form-control-label") }}
+
+                        {% if form.Status.errors %}
+                            {{ form.Status(class="form-control form-control-lg is invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.Status.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                        {{ form.Status(class="form-control form-control-lg") }}
+                            {% endif %}
+                    </div>
+                       
+
+                        <div class="form-group">
+                                {{ form.Reg_NO.label(class="form-control-label") }}
+                                {% if form.Reg_NO.errors %}
+                                    {{ form.Reg_NO(class="form-control form-control-lg is invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.Reg_NO.errors %}
+                                        <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    {% else %}
+                                {{ form.Reg_NO(class="form-control form-control-lg") }}
+                                    {% endif %}
+                            </div>
+
+                    
+
+                    <div class="form-group">
+                        {{ form.Date_of_birth.label(class="form-control-label") }}
+                        {% if form.Date_of_birth.errors %}
+                            {{ form.Date_of_birth(class="form-control form-control-lg is invalid" ) }}
+                            <div class="invalid-feedback">
+                                {% for error in form.Date_of_birth.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                        {{ form.Date_of_birth(class="form-control form-control-lg") }}
+                            {% endif %}
+                    </div>
+
+                 
+
+                 <div style="display: inline-block;">
+                        {{ form.Gender.label() }}
+                        {% if form.Gender.errors %}
+                            {{ form.Gender() }}
+                            <div class="invalid-feedback">
+                                {% for error in form.Gender.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                        {{ form.Gender() }}
+                            {% endif %}
+                    </div><br><br>
+
+                    <div style="display: inline-block;">
+                        {{ form.Student_Class.label() }}
+                        {% if form.Student_Class.errors %}
+                            {{ form.Student_Class(accept="image/*") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.Student_Class.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                        {{ form.Student_Class() }}
+                            {% endif %}
+                    </div><br><br>
+
+                  
+
+                    <div class="form-group">
+{#                        {{ form.image_file.lable()}}#}
+                        {{  form.Image_file(class="form-control-file")}}
+                        {% if form.Image_file.errors %}
+                            {% for error in form.Image_file.errors%}
+                            <span class="text-danger">{{error}}</span><br>
+                            {% endfor %}
+                        {% endif %}
+                    </div><br><br>
+                   
+
+                    <div class="form-group">
+                        {{ form.submit(class="btn-success") }}
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+
+        {% endblock %}

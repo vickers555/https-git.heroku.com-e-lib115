@@ -1,0 +1,18 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+{{ super() }}
+<div class="row" style="text-align: center;">
+    <h1>Welcome to the Control Panel</h1>
+    <p class="lead">
+        Take full control of your your data here 
+    </p>
+    <p>
+        Object in this environment should be take care by the I.T personal.
+    </p><br><br><hr>
+
+     <button class="btn btn-danger"> Warning </button><br><br>
+      <p> Object here are very sensitive </p><br><br><hr>
+
+    <a class="btn btn-primary" href="/super"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+</div>
+{% endblock body %}
